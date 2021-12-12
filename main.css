@@ -1,0 +1,87 @@
+th {
+    border: 1px solid lightblue;
+    width: 25px;
+    height: 25px;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+table {
+    margin: 25px auto;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+.btn-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.buttons {
+  padding: 5px 10px;
+}
+
+.wall {
+    background-color: #02182B;
+    border: none;
+    animation-name: wall;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0;
+}
+
+.start {
+  background-color: green;
+  border: none;
+}
+
+.end {
+  background-color: red;
+  border: none;
+}
+
+.visited {
+  background-color: #2ba5dd;
+  animation-name: visited;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0s;
+}
+
+.path {
+  background-color: yellow;
+}
+
+@keyframes wall {
+  from {
+    background-color: white;
+  }
+
+  to {
+    background-color: #02182B;
+  }
+}
+
+@keyframes visited {
+  0% {
+    transform: scale(0.3);
+    background-color: rgba(0, 0, 66, 0.75);
+    border-radius: 100%;
+  }
+
+  50% {
+    background-color: #1C77C3;
+  }
+
+  75% {
+    transform: scale(1.2);
+    background-color: #40BCD8;
+  }
+
+  100% {
+    transform: scale(1);
+    background-color: #2ba5dd;
+  }
+}
