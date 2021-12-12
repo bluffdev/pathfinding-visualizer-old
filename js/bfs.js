@@ -26,16 +26,22 @@ class BFS {
     solve_bfs() {
         let r;
         let c;
+        let foundEndNode = false;
 
         while (this.qr.length > 0 && this.qc.length > 0) {
             r = this.qr.shift();
             c = this.qc.shift();
 
-            if (this.grid[r][c].isEnd === true) break;
+            if (this.grid[r][c].isEnd === true) {
+                foundEndNode = true;
+                break;
+            }
             
             this.exploreNeighbors(r, c);
         }
-        this.reconstructPath();
+
+        if (foundEndNode)
+            this.reconstructPath();
     };
 
     exploreNeighbors(r, c) {
